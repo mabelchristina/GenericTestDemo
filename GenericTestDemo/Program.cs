@@ -7,7 +7,7 @@ namespace GenericTestDemo
         static void Main(string[] args)
         {
             MaxOfNumber maxOfNumber = new MaxOfNumber();
-            Console.WriteLine(maxOfNumber.Max(10, 2, 1));
+            Console.WriteLine(maxOfNumber.Max("apple","peach","banana"));
         }
     }
 }
