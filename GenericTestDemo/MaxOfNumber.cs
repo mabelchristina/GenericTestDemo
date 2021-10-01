@@ -6,7 +6,7 @@ namespace GenericTestDemo
 {
     public class MaxOfNumber
     {
-        public int Max(int a, int b, int c)
+        public float Max(float a, float b, float c)
         {
             if (a > b && a > c)
             {
