@@ -1,33 +1,35 @@
 using GenericTestDemo;
 using NUnit.Framework;
+using static GenericTestDemo.MaxOfNumber;
 
 namespace GenericUnitTest
 {
     public class Tests
     {
         [Test]
-        public void GivenMaxInFirstPositin_WhenMaxStringCheck_ThenReturnMax()
+        public void Test1()
         {
-            string firstValue = "peach", secondValue = "apple", thirdValue = "banana";
-            MaxOfNumber maxOfNumber = new MaxOfNumber();
-            var actual = maxOfNumber.Max(firstValue, secondValue, thirdValue);
-            Assert.AreEqual(firstValue, actual);
+            int[] intArray = { 4, 11, 7 };
+            int max = 11;
+            FindMaximum<int> findMaximum = new FindMaximum<int>(intArray);
+            int res = findMaximum.FindMax();
+            Assert.AreEqual(res, max);
         }
-        [Test]
-        public void GivenMaxInSecondPositin_WhenMaxStringCheck_ThenReturnMax()
+        public void Test2()
         {
-            string firstValue = "apple", secondValue = "peach", thirdValue = "banana";
-            MaxOfNumber maxOfNumber = new MaxOfNumber();
-            var actual = maxOfNumber.Max(firstValue, secondValue, thirdValue);
-            Assert.AreEqual(secondValue, actual);
+            float[] floatArray = { 2.5f, 2.2f, 2.8f };
+            float max = 2.8f;
+            FindMaximum<float> findMaximum = new FindMaximum<float>(floatArray);
+            float res = findMaximum.FindMax();
+            Assert.AreEqual(res, max);
         }
-        [Test]
-        public void GivenMaxInThirdPositin_WhenMaxStringCheck_ThenReturnMax()
+        public void Test3()
         {
-            string firstValue = "apple", secondValue = "banana", thirdValue = "peach";
-            MaxOfNumber maxOfNumber = new MaxOfNumber();
-            var actual = maxOfNumber.Max(firstValue, secondValue, thirdValue);
-            Assert.AreEqual(thirdValue, actual);
+            string[] stringArray = { "Apple", "Peach", "Banana" };
+            string max = "Peach";
+            FindMaximum<string> findMaximum = new FindMaximum<string>(stringArray);
+            string res = findMaximum.FindMax();
+            Assert.AreEqual(res, max);
         }
     }
 }

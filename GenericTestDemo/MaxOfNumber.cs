@@ -6,21 +6,23 @@ namespace GenericTestDemo
 {
     public class MaxOfNumber
     {
-        public string Max(string firstValue, string secondValue, string thirdValue)
+        public class FindMaximum<T> where T : IComparable
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                 firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
+            public T[] array;
+            public FindMaximum(T[] arr)
             {
-                return (firstValue);
+                this.array = arr;
             }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            public T[] Sort()
             {
-                return (secondValue);
+                Array.Sort(array);
+                return array;
             }
-            return (thirdValue);
+            public T FindMax()
+            {
+                T[] sorted = this.Sort();
+                return sorted[sorted.Length - 1];
+            }
         }
-    }
+    }           
 }
